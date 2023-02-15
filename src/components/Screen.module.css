@@ -1,0 +1,17 @@
+.screen {
+  width: 95%;
+  height: 5rem;
+  background-color: inherit;
+  margin: 2rem auto auto;
+  position: relative;
+}
+
+.text {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0rem;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

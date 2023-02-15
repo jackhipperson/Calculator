@@ -1,0 +1,45 @@
+.box {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background-color: rgb(60, 60, 60);
+  color: white;
+  border: rgb(19, 19, 19) 1px solid;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+}
+
+.utility {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background-color: rgb(94,94,94);
+    color: white;
+    border: rgb(19, 19, 19) 1px solid;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+}
+
+.equals {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background-color: rgb(255, 176, 30);
+  color: white;
+  border: rgb(19, 19, 19) 1px solid;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  grid-column: 3 / 5;
+
+}
+
+
+
