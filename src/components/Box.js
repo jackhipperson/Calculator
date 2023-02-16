@@ -30,6 +30,8 @@ const Box = (props) => {
           ? `${styles.utility}`
           : props.className === "equals"
           ? `${styles.equals}`
+          : props.className === "cButton"
+          ? `${styles.cButton}`
           : `${styles.box}`
       }
     >

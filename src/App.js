@@ -8,6 +8,9 @@ function App() {
   const [calcString, setCalcString] = useState(0);
   const [decimal, setDecimal] = useState(true);
 
+  const maxCharacters = 30
+  const maxValue = 999999999999999999999999999999
+
   const buttonValues = [
     ["C", "+/-", "←", "+"],
     [7, 8, 9, "-"],
@@ -22,7 +25,7 @@ function App() {
   };
 
   const newValue = (newValue) => {
-    if (calcString.toString().length > 13) {
+    if (calcString.toString().length >= maxCharacters) {
       return;
     }
 
@@ -71,22 +74,22 @@ function App() {
       calcString.toString().slice(-1) === "*" ||
       calcString.toString().slice(-1) === "/"
     ) {
-      if (eval(calcString.toString().slice(0, -1)) > 9999999999999) {
-        return 9999999999999;
+      if (eval(calcString.toString().slice(0, -1)) > maxValue) {
+        return maxValue;
       } else if (
-        eval(calcString.toString().slice(0, -1)).toString().length > 13
+        eval(calcString.toString().slice(0, -1)).toString().length >= maxCharacters
       ) {
         return setCalcString(
-          eval(calcString.toString().slice(0, -1)).toString().slice(0, 13)
+          eval(calcString.toString().slice(0, -1)).toString().slice(0, maxCharacters-1)
         );
       } else {
         return setCalcString(eval(calcString.toString().slice(0, -1)));
       }
     }
-    if (result > 9999999999999) {
-      return 9999999999999;
-    } else if (result.toString().length > 13) {
-      return setCalcString(result.toString().slice(0, 13));
+    if (result > maxValue) {
+      return maxValue;
+    } else if (result.toString().length >= maxCharacters) {
+      return setCalcString(result.toString().slice(0, maxCharacters-1));
     } else {
       return setCalcString(result);
     }
@@ -100,7 +103,7 @@ function App() {
   };
 
   const handleDecimal = () => {
-    if (calcString.toString().length > 13) {
+    if (calcString.toString().length >= maxCharacters) {
       return;
     }
     if (!decimal) {
@@ -116,7 +119,7 @@ function App() {
   };
 
   const plusMinus = () => {
-    if (calcString.toString().length > 13) {
+    if (calcString.toString().length >= maxCharacters) {
       return;
   }
   if (calcString.toString().indexOf("+") !== -1 || calcString.toString().indexOf("*") !== -1 || calcString.toString().indexOf("/") !== -1 || calcString.toString().indexOf("-") > 0) {
@@ -141,7 +144,7 @@ function App() {
             <Box
               key={i}
               val={btn}
-              className={btn === "=" ? "equals" : btn >= 0 ? "box" : "utility"}
+              className={btn === "=" ? "equals" : btn >= 0 ? "box" : btn === "C" ? "cButton" : "utility"}
               clearCalc={clearCalc}
               newValue={newValue}
               calculateResult={calculateResult}
