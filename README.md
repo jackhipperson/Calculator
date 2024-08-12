@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React Calculator
 
 This React Calculator is a straightforward web-based calculator application developed using React JS and CSS Modules. This project was for me to gain experience with React and to enhance CSS skills.
@@ -36,3 +37,6 @@ Contributions to the "Simple React Calculator" project are welcome! If you'd lik
 3. Make your changes and commit them: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin feature/your-feature-name`
 5. Create a pull request detailing your changes.
+=======
+Calculator App created using React
+>>>>>>> 7b48d79 (Dev)
